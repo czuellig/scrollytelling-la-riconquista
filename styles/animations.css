@@ -1,0 +1,15 @@
+.zebrastreifen {
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), border-radius 1s ease;
+}
+
+/* Aktivierte Form (deutlich krummer) */
+.zebrastreifen.active {
+  transform: scaleX(1.4) scaleY(0.7) skewX(20deg) rotate(3deg);
+  border-radius: 60% 10% / 40% 80%;
+}
+
+/* Abwechslung zwischen geraden und ungeraden Streifen */
+.zebrastreifen:nth-child(even).active {
+  transform: scaleX(1.4) scaleY(0.7) skewX(-20deg) rotate(-3deg);
+  border-radius: 10% 60% / 80% 40%;
+}
