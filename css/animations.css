@@ -1,5 +1,18 @@
-.zebrastreifen {
-  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), border-radius 1s ease;
+.in-animation {
+    h1 {
+        animation: slide-in-from-bottom 400ms ease-in-out both;
+    }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Aktivierte Form (deutlich krummer) */
