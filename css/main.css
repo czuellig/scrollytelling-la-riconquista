@@ -3,45 +3,83 @@
 @import "reset.css";
 
 body {
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  height: 100vh;
-  margin: 0;
+  font-family: 'K2D', sans-serif;
+}
+
+/* Basisbilder */
+.title-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Der ganze Titelbereich bildet den Positionierungsrahmen */
+#title {
+  position: relative;
+  width: 100%;
+  height: 150vh; /* oder so hoch, dass beide Bilder Platz haben */
   overflow: hidden;
+  padding-bottom: 100vh; /* genug Platz für das zweite Bild */
 }
 
-aside {
-  padding: 2rem;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  background-color: rgb(255, 214, 214);
+/* Textbox über den Bildern platzieren */
+.title-text-wrap {
+  position: absolute;
+  top: 40%;               /* vertikale Position (anpassen nach Geschmack) */
+  left: 50%;              /* horizontal zentrieren */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffd553;
+  z-index: 2;             /* über den Bildern */
 }
 
-main {
-  padding: 2rem;
-  background-color: rgb(255, 214, 214);
-  overflow-y: auto; /* wichtig */
-  height: 100vh;    /* wichtig, damit es einen eigenen Scrollbereich gibt */
+/* Optional: Schriftgrösse und Stil */
+.title-text {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+} 
+
+.title-description {
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
-h1 {
-  margin: 0;
-  font-family: "BBH Sans Hegarty", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 5rem;
-  color: red;
+/* Zweites Bild leicht über das erste legen */
+.title-img--over {
+  position: absolute;
+  top: 400px; /* oder z. B. transform: translateY(-10%) falls dynamischer */
+  left: 0;
+  width: 100%;
+  z-index: 3; /* über Himmel, unter Text */
 }
 
-.zebrastreifen {
-  width: 85%;
-  height: 100px;
-  background: red;
-  border-radius: 4px;
-  margin: 16px 0;
-  transition: transform 0.3s ease, border-radius 0.3s ease;
+/* Erstes Bild: Basis-Hintergrund */
+.title-wrap:first-of-type img {
+  position: relative;
+  z-index: 1;
 }
 
+#opener {
+ background-color: #3f75af;
+}
+
+#opener-quote {
+  font-size: 2rem;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1rem 1rem;
+  color: #ffd553;
+}
+
+#ellipsen {
+  max-width: 100%;
+  display: flex;
+}
+
+#ellipsen img {
+  max-width: 100%;
+  height: auto;
+}
 

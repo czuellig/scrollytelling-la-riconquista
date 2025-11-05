@@ -4,31 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <title>Scrollytelling - La Reconquista</title>
   </head>
   <body>
-    <aside class="in-animation">
-      <h1>
-        LA <br />
-        RICON <br />
-        QUISTA <br />
-      </h1>
-    </aside>
+    <header></header>
     <main>
-      <section>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
-        <div class="zebrastreifen"></div>
+      <section id="title">
+        <div class="title-text-wrap">
+          <h1 class="title-text">La Reconquista</h1>
+          <p class="title-description">
+            ein kreativprojekt von <br />
+            cédric züllig und livia vogt <br />
+            VIS 5 / IM 5 <br />
+            multimedia production
+          </p>
+        </div>
+        <div class="title-wrap">
+          <img
+            class="title-img"
+            src="/content/pictures/01_himmel.png"
+            alt="Himmel"
+          />
+        </div>
+        <div class="title-wrap">
+          <img
+            class="title-img title-img--over"
+            src="/content/pictures/02_collage.png"
+            alt="Collage"
+          />
+        </div>
+      </section>
+      <section id="opener">
+        <div id="opener-quote">
+          <p>
+            "Eines Tages, als ich an meinem Schreibtisch sass und zum Fenster
+            hinausschaute, sah ich, dass sich auf der Fernsehantenne des
+            gegenüberliegenden Hauses ein Adler niedergelassen hatte.
+          </p>
+          <p class="quote-source">Die Rückeroberung, Franz Hohler (1982)</p>
+        </div>
+        <div id="ellipsen"">
+          <div class="ellipse-img">
+          <img src="/content/pictures/03_ellipse_1.png" alt="" />
+          </div>
+          <div class="ellipse-img">
+            <img src="/content/pictures/03_ellipse_2.png" alt="" />
+          </div>
+          <div class="ellipse-img">
+            <img src="/content/pictures/03_ellipse_2.png" alt="" />
+          </div>
+          <div class="ellipse-img">
+            <img src="/content/pictures/03_ellipse_4.png" alt="" />
+          </div>
+        </div>
       </section>
     </main>
-    <script type="module" src="/js/animations.js"></script>
   </body>
 </html>
