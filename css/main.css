@@ -8,55 +8,58 @@ body {
 
 /* Basisbilder */
 .title-img {
-  display: block;
   width: 100%;
   height: auto;
 }
 
 /* Der ganze Titelbereich bildet den Positionierungsrahmen */
 #title {
+  width: 100%;
+}
+
+#title-pic-bottom-container {
   position: relative;
   width: 100%;
-  height: 150vh; /* oder so hoch, dass beide Bilder Platz haben */
-  overflow: hidden;
-  padding-bottom: 100vh; /* genug Platz für das zweite Bild */
+  height: 100vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-/* Textbox über den Bildern platzieren */
-.title-text-wrap {
-  position: absolute;
-  top: 40%;               /* vertikale Position (anpassen nach Geschmack) */
-  left: 50%;              /* horizontal zentrieren */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #ffd553;
-  z-index: 2;             /* über den Bildern */
+#title-text-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
 }
 
-/* Optional: Schriftgrösse und Stil */
+#title-pic-top-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Schriftgrösse und Stil */
 .title-text {
   font-size: 4rem;
   margin-bottom: 1rem;
+  color: #ffd553;
 } 
 
 .title-description {
   font-size: 1.2rem;
   line-height: 1.4;
-}
-
-/* Zweites Bild leicht über das erste legen */
-.title-img--over {
-  position: absolute;
-  top: 400px; /* oder z. B. transform: translateY(-10%) falls dynamischer */
-  left: 0;
-  width: 100%;
-  z-index: 3; /* über Himmel, unter Text */
-}
-
-/* Erstes Bild: Basis-Hintergrund */
-.title-wrap:first-of-type img {
-  position: relative;
-  z-index: 1;
+  color: #ffd553;
 }
 
 #opener {
