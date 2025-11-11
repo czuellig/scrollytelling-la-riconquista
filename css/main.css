@@ -77,10 +77,6 @@ text-align: center;
   color: #ffd553;
 }
 
-#opener {
- background-color: #3f75af;
-}
-
 #opener-quote {
   font-size: 2rem;
   font-style: italic;
@@ -91,13 +87,56 @@ text-align: center;
   color: #ffd553;
 }
 
-#ellipsen {
-  max-width: 100%;
+/* --- OPENER SECTION --- */
+#opener {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #3f75af;
+}
+
+/* Ellipsen fixiert als Hintergrund */
+#ellipse-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-#ellipsen img {
-  max-width: 100%;
+.ellipse-img img {
+  width: 25vw;
   height: auto;
+  object-fit: contain;
 }
 
+/* Titel im Vordergrund */
+#story-title-container {
+  position: absolute;
+  top: 50%;
+  left: 0; /* Statt 50% */
+  transform: translateY(-50%); /* Nur vertikal zentrieren */
+  white-space: nowrap;
+  z-index: 2;
+  width: 100%;
+  overflow: visible;
+}
+
+
+#story-title {
+  font-size: 20vw; /* Extrem gross – ragt über den Viewport hinaus */
+  color: #ffd553;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+#story-chapter-1 {
+  height: 100vh;
+  background-color: red;
+}
