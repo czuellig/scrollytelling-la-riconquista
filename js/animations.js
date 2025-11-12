@@ -64,7 +64,6 @@ gsap.from(splitQuoteSource.chars, {
 });
 
 // --- Szene 2: Opener – Titel bewegt sich horizontal ---
-gsap.registerPlugin(ScrollTrigger);
 
 const title = document.querySelector("#story-title");
 const titleWidth = title.scrollWidth;
@@ -87,3 +86,38 @@ gsap.to("#story-title", {
   },
 });
 
+// --- Szene 3: Kapitel 0 – Spalten erscheinen von unten ---
+gsap.registerPlugin(ScrollTrigger);
+
+// Linke und rechte Spalte auswählen
+const leftCol = document.querySelector(".text-human");
+const rightCol = document.querySelector(".text-plants");
+
+// Timeline für sanft versetztes Einblenden
+const tlColumns = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#story-chapter-0",
+    start: "top 80%",   // Animation startet, wenn 80% des Viewports erreicht
+    end: "bottom 60%",
+    toggleActions: "play none none reverse", // rückwärts animieren beim Scrollen zurück
+  },
+});
+
+// Animationen
+tlColumns
+  .from(leftCol, {
+    y: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+  })
+  .from(
+    rightCol,
+    {
+      y: 120,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    },
+    "-=0.7" // startet leicht versetzt (0.7s nach der linken Spalte)
+  );

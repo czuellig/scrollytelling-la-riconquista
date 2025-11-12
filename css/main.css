@@ -4,6 +4,7 @@
 
 body {
   font-family: 'K2D', sans-serif;
+  background-color: #3f75af;
 }
 
 /* Basisbilder */
@@ -136,7 +137,42 @@ text-align: center;
 }
 
 
-#story-chapter-1 {
-  height: 100vh;
-  background-color: red;
+/* --- STORY CHAPTER 0 --- */
+#story-chapter-0 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4vw;
+  padding: 5vh 10vw;
+  position: relative;
+  min-height: 100vh;
 }
+
+/* Linke Spalte (Text Human) */
+.text-human {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffd553
+}
+
+/* Rechte Spalte (Bild + Text Plants) */
+.text-plants {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffd553;
+  position: relative;
+  top: 20vh; /* macht die rechte Spalte etwas tiefer */
+}
+
+.text-plants img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
