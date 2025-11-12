@@ -121,3 +121,19 @@ tlColumns
     },
     "-=0.7" // startet leicht versetzt (0.7s nach der linken Spalte)
   );
+
+  // --- Szene 4: Kapitel 1 – Parallax-Bild mit zentriertem Titel ---
+
+gsap.to("#pic-chapter-1 img", {
+  yPercent: -30, // bewegt sich 30% langsamer als der Scroll
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#parallax-chapter-1-container",
+    start: "top bottom",  // wenn der obere Rand das Viewport-Ende erreicht
+    end: "bottom top",    // bis der untere Rand oben ist
+    scrub: true,          // sanfter Übergang
+  },
+});
+
+
+
