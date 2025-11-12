@@ -135,5 +135,44 @@ gsap.to("#pic-chapter-1 img", {
   },
 });
 
+// Horizontal Scroll Animation für Carousel
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('load', () => {
+  const carousel = document.querySelector("#carusel-horizontal-scroll");
+  const items = gsap.utils.toArray("#carusel-horizontal-scroll .carusel-item");
+
+  // sichere Abfrage
+  if (!carousel || items.length === 0) return;
+
+  // totale Breite der Carousel-Spur (inkl. margins)
+  const totalWidth = carousel.scrollWidth;
+  const viewportW = document.documentElement.clientWidth;
+  const scrollDistance = totalWidth - viewportW; // wie weit wir die Spur verschieben müssen
+
+  // Falls scrollDistance <= 0: nichts tun
+  if (scrollDistance <= 0) return;
+
+  // wir animieren die ganze spur (den container) nach links
+  gsap.to(carousel, {
+    x: () => -scrollDistance,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#chapter-1-container",  // beginnt wenn der section-Block oben ist
+      start: "top top",                 // sofort pinned, wenn oben
+      end: () => "+=" + scrollDistance, // genug Scroll-Länge bis letztes Bild sichtbar
+      scrub: true,
+      pin: true,                        // pinnt das ganze section-Block-Verhalten
+      anticipatePin: 0.5,
+      invalidateOnRefresh: true
+    }
+  });
+
+  // wichtig: ScrollTrigger neu berechnen, falls responsive oder später geladen wird
+  ScrollTrigger.refresh();
+});
+
+
 
 

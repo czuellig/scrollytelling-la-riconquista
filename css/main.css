@@ -7,6 +7,12 @@ body {
   background-color: #3f75af;
 }
 
+#placeholder {
+  width: 100%;
+ height: 100vh;
+ background-color: chartreuse;
+}
+
 /* Basisbilder */
 .title-img {
   width: 100%;
@@ -179,8 +185,10 @@ text-align: center;
 #parallax-chapter-1-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* nimmt die volle Höhe des Bildschirms ein */
+  height: 100vh;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #pic-chapter-1 {
@@ -194,13 +202,12 @@ text-align: center;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%; /* etwas grösser, um bei Parallax keine Lücken zu zeigen */
+  height: 120%;
   object-fit: cover;
   transform: translateY(0);
   z-index: 1;
 }
 
-/* Titel über dem Bild, zentriert */
 .chapter-title {
   position: absolute;
   top: 50%;
@@ -214,7 +221,66 @@ text-align: center;
   pointer-events: none;
 }
 
+/* --- TEXT SECTION (direkt nach Parallax) --- */
+
+/* Kapitel-Block: Text oben, Carousel unten, gesamthaft 100vh */
 #chapter-1-container {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;        /* stapelt text über carousel */
+  justify-content: space-between;/* text oben, carousel unten */
+  height: 100vh;                 /* füllt den Viewport exakt */
+  padding: 4vh 0;              /* aussenabstand */
+  box-sizing: border-box;
+  margin: 0;                     /* kein Zwischenraum nach oben */
   background-color: #3f75af;
 }
+
+/* Text-Container oben */
+#chapter-1-container-text {
+  width: 50%;       /* gleiche Breite wie linke Spalte zuvor */
+  align-self: flex-end; /* an der linken Seite */
+  padding-right: 10vw;  /* innenabstand */
+  padding-left: 2vw;
+  color: #ffd553;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- CAROUSEL SECTION --- */
+/* Der Wrapper ist der sichtbare Rahmen, bleibt beim Pinning stehen */
+#carusel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* nur hier verstecken wir Überlauf */
+  display: flex;
+  align-items: flex-end; /* Bilder unten ausrichten */
+  padding-bottom: 2vh; /* etwas Luft zum unteren Rand */
+  padding: 0 1vw; /* etwas Luft zu den Seiten */
+  box-sizing: border-box;
+}
+
+/* Das scrollende Band mit allen Bildern */
+#carusel-horizontal-scroll {
+  display: flex;
+  gap: 2vw;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Einzelne Items */
+.carusel-item {
+  flex: 0 0 45vw;  /* zwei Bilder gleichzeitig sichtbar, 45vw Breite */
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.carusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+}
+
+
