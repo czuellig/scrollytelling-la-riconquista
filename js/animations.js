@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
   // totale Breite der Carousel-Spur (inkl. margins)
   const totalWidth = carousel.scrollWidth;
   const viewportW = document.documentElement.clientWidth;
-  const scrollDistance = totalWidth - viewportW; // wie weit wir die Spur verschieben müssen
+  const scrollDistance = totalWidth - viewportW + (0.02 * viewportW); // wie weit wir die Spur verschieben müssen
 
   // Falls scrollDistance <= 0: nichts tun
   if (scrollDistance <= 0) return;
