@@ -214,7 +214,8 @@ text-align: center;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #3f75af;
-  font-size: 5rem;
+  font-size: 8rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   z-index: 2;
@@ -232,7 +233,6 @@ text-align: center;
   padding: 4vh 0;              /* aussenabstand */
   box-sizing: border-box;
   margin: 0;                     /* kein Zwischenraum nach oben */
-  background-color: #3f75af;
 }
 
 /* Text-Container oben */
@@ -283,4 +283,71 @@ text-align: center;
   border-radius: 1rem;
 }
 
+#chapter-2-container {
+  height: 100vh;                 /* füllt den Viewport exakt */
+  padding: 5vh 10vw;             
+}
+
+#chapter-2-container-text {
+  width: 50%;       /* gleiche Breite wie linke Spalte zuvor */
+  align-self: flex-start; /* an der linken Seite */
+  padding-right: 2vw;  /* innenabstand */
+  color: #ffd553;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+  height: 200vh;
+}
+
+.img-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 75%;
+  top: 50vh; /* vorher 75vh → jetzt weiter oben */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.img-group div {
+  position: relative;
+  width: 20%;
+  aspect-ratio: 1/1;
+  max-width: 124px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.img-group div:nth-child(1) {
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-1.png");
+}
+.img-group div:nth-child(2) {
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-2.png");
+}
+.img-group div:nth-child(3) {
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-3.png");
+}
+.img-group div:nth-child(4) {
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-4.png");
+}
+.img-group div:nth-child(5) {
+  background-image: url("https://assets.codepen.io/16327/flair.png");
+}
+
+.img-group div::before {
+  content: attr(data-speed);
+  position: absolute;
+  color: #fffce1;
+  top: -2rem;
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+}
 

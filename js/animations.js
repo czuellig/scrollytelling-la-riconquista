@@ -173,6 +173,17 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
+// --- Szene 5: Icons mit unterschiedlicher Scrollgeschwindigkeit ---
+// (setzt voraus, dass ScrollSmoother bereits initialisiert wurde)
 
+const icons = gsap.utils.toArray(".img-group div");
+
+icons.forEach((icon, i) => {
+  // Geschwindigkeit aus data-speed lesen (Fallback: 1)
+  const speed = parseFloat(icon.dataset.speed) || 1;
+
+  // Mit ScrollSmoother bewegen sich Elemente je nach Geschwindigkeit unterschiedlich
+  smoother.effects(icon, { speed: speed, lag: 0 });
+});
 
 
