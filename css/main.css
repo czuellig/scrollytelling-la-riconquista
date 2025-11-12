@@ -175,4 +175,10 @@ text-align: center;
   border-radius: 0.5rem;
 }
 
+#chapter-title  {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffd553;
+}
 
