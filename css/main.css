@@ -351,3 +351,42 @@ text-align: center;
   font-size: 16px;
 }
 
+#chapter-3-container {
+  height: 100vh;                 /* füllt den Viewport exakt */
+  padding: 5vh 5vw;   
+  display: flex;     
+  gap: 2vw;     
+}
+
+#chapter-3-text {
+  align-self: flex-start; /* an der linken Seite */
+  color: #ffd553;
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+#chapter-3-pic {    
+  justify-content: flex-end;
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+}
+
+#chapter-3-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#chapter-3-title .line {
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#chapter-3-title .line:hover {
+  opacity: 0.7;
+}

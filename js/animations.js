@@ -187,3 +187,28 @@ icons.forEach((icon, i) => {
 });
 
 
+// --- Szene 6: Kapitel 3 – Hover-Zeilen ändern das Bild ---
+
+// Optional: SplitText, falls du noch Texteffekte planst
+// const split = new SplitText("#chapter-3-title", { type: "lines" });
+// const lines = split.lines;
+
+const lines = document.querySelectorAll("#chapter-3-title .line");
+const image = document.querySelector("#chapter-3-img");
+
+lines.forEach((line) => {
+  line.addEventListener("mouseenter", () => {
+    const newSrc = line.dataset.img;
+
+    if (image.src.includes(newSrc)) return; // wenn gleiches Bild, nichts tun
+
+    gsap.to(image, {
+      opacity: 0,
+      duration: 0.4,
+      onComplete: () => {
+        image.src = newSrc;
+        gsap.to(image, { opacity: 1, duration: 0.4 });
+      },
+    });
+  });
+});
