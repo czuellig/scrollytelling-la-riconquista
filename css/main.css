@@ -389,4 +389,131 @@ text-align: center;
 
 #chapter-3-title .line:hover {
   opacity: 0.7;
+  transform: translateY(-0.6rem) scale(1.03);
+  transition: transform 200ms ease, opacity 200ms ease;
+  will-change: transform, opacity;
+}
+
+#chapter-4 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chapter-4-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5vh 8vw;
+}
+
+/* Textblöcke allgemein */
+.chapter-4-text {
+  color: #ffd553;
+  font-size: 5.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+/* individuelle Platzierung */
+#chapter-4-text-top-right {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  text-align: right;
+
+}
+
+#chapter-4-text-mid-left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+}
+
+#chapter-4-text-bottom-right {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  text-align: right;
+
+} 
+
+#chapter-4 {
+  position: relative;
+}
+
+#chapter-4-progress {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 0; /* wächst via GSAP */
+  background-color: #ffd553;
+  transform: translateX(-50%);
+  z-index: 999; /* sehr wichtig */
+  border-radius: 2px;
+}
+
+/* --- PARALLAX CHAPTER 5 --- */
+#parallax-chapter-5-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#pic-chapter-5 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#pic-chapter-5 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.chapter-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3f75af;
+  font-size: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#chapter-5-container {
+  display: flex;
+  flex-direction: column;        /* stapelt text über carousel */
+  justify-content: space-between;/* text oben, carousel unten */
+  height: 100vh;                 /* füllt den Viewport exakt */
+  padding: 4vh 0;              /* aussenabstand */
+  box-sizing: border-box;
+  margin: 0;                     /* kein Zwischenraum nach oben */
+}
+
+/* Text-Container oben */
+#chapter-5-container-text {
+  width: 50%;       /* gleiche Breite wie linke Spalte zuvor */
+  align-self: flex-end; /* an der linken Seite */
+  padding-right: 10vw;  /* innenabstand */
+  padding-left: 2vw;
+  color: #ffd553;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

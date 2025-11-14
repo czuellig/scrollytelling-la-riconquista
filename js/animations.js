@@ -212,3 +212,74 @@ lines.forEach((line) => {
     });
   });
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* --------------------------------------------------
+   1. Progressbar erscheint und wächst mit Scroll
+-------------------------------------------------- */
+
+// Fade-In
+gsap.fromTo(
+  "#chapter-4-progress",
+  { opacity: 0 },
+  {
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#chapter-4",
+      start: "top bottom",   // Section kommt ins Sichtfeld
+      once: true             // Fade-In nur beim ersten Mal
+    }
+  }
+);
+
+// Wachstum
+gsap.to("#chapter-4-progress", {
+  height: "100%",
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#chapter-4",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+
+/* --------------------------------------------------
+   2. Texte erscheinen, wenn die Progressbar ihre Höhe erreicht
+-------------------------------------------------- */
+
+function animateWhenReached(textID) {
+  gsap.from(textID, {
+    opacity: 0,
+    x: textID.includes("mid-left") ? -150 : 150,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: textID,
+      start: "top center+=10%",
+      toggleActions: "play none none reverse"
+    }
+  });
+}
+
+animateWhenReached("#chapter-4-text-mid-left");
+animateWhenReached("#chapter-4-text-top-right");
+animateWhenReached("#chapter-4-text-bottom-right");
+
+  // --- Szene 7: Kapitel 5 – Parallax-Bild mit zentriertem Titel ---
+
+gsap.to("#pic-chapter-5 img", {
+  yPercent: -30, // bewegt sich 30% langsamer als der Scroll
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#parallax-chapter-5-container",
+    start: "top bottom",  // wenn der obere Rand das Viewport-Ende erreicht
+    end: "bottom top",    // bis der untere Rand oben ist
+    scrub: true,          // sanfter Übergang
+  },
+});
+
