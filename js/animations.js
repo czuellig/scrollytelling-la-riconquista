@@ -28,10 +28,10 @@ tl.fromTo(
 );
 
 
-let smoother = ScrollSmoother.create({
-    wrapper: ".smooth-wrapper",
-    content: ".smooth-content", 
-   
+const smoother = ScrollSmoother.create({
+  wrapper: "#smooth-wrapper",
+  content: ".smooth-content",
+  smooth: 1.2
 });
 
 let splitQuoteText = SplitText.create("#quote-text", {type:"lines"});
@@ -54,7 +54,6 @@ gsap.from(splitQuoteSource.chars, {
     scrollTrigger: {
         trigger: "#opener-quote",
         start: "bottom 80%",
-        markers: true,
     },
     y: 50,
     opacity: 0,
@@ -283,3 +282,84 @@ gsap.to("#pic-chapter-5 img", {
   },
 });
 
+ // --- Szene 8: Kapitel 5 – Scrubbed Vertical Rodolex ---
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* Alle vier Würfel abrufen */
+const sliders = [
+  gsap.utils.toArray(".slider-1 .slide"),
+  gsap.utils.toArray(".slider-2 .slide"),
+  gsap.utils.toArray(".slider-3 .slide"),
+  gsap.utils.toArray(".slider-4 .slide")
+];
+
+const wrapper = document.querySelector(".quad-wrapper");
+
+/* Prüfen ob alle OK */
+sliders.forEach((arr, i) => {
+  if (!arr.length) console.warn("Slider", i, "hat keine Slides!");
+});
+
+/* Anzahl Slides (mindestens 2) */
+const slidesCount = Math.min(
+  sliders[0].length,
+  sliders[1].length,
+  sliders[2].length,
+  sliders[3].length
+);
+
+/* Grund-Start: erstes Slide sichtbar, andere -90° */
+sliders.forEach(slides => {
+  gsap.set(slides, {
+    rotationX: i => (i ? -90 : 0),
+    transformOrigin: "center center -150px"
+  });
+});
+
+/* Timeline */
+const delay = 0.45;
+const tlRodolex = gsap.timeline({
+  scrollTrigger: {
+    trigger: wrapper,
+    pin: true,
+    scrub: true,
+    start: "top top",
+    end: `+=${(slidesCount - 1) * 200}%`,
+    anticipatePin: 0.5,
+    markers: false
+  }
+});
+
+/* Reihenfolge: 1 → 2 → 3 → 4 → dann nächste Slide */
+const order = [3, 1, 2, 0];
+
+for (let i = 0; i < slidesCount - 1; i++) {
+  order.forEach(index => {
+    const cubeSlides = sliders[index];
+    const current = cubeSlides[i];
+    const next = cubeSlides[i + 1];
+
+    tlRodolex.to(
+      current,
+      {
+        rotationX: 90,
+        duration: 0.6,
+        ease: "power1.inOut",
+        onComplete: () => gsap.set(current, { rotationX: -90 })
+      },
+      "+=" + delay
+    ).to(
+      next,
+      {
+        rotationX: 0,
+        duration: 0.6,
+        ease: "power1.inOut"
+      },
+      "<"
+    );
+  });
+}
+
+/* Abschluss */
+tlRodolex.to({}, { duration: delay });
