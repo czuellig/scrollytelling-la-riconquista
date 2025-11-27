@@ -2,15 +2,20 @@
 @import "fonts.css";
 @import "reset.css";
 
+:root {
+  --bg: #3f75af;
+  --text: #ffd553;
+}
+
 body {
   font-family: 'K2D', sans-serif;
-  background-color: #3f75af;
+  background-color: var(--bg);
 }
 
 #placeholder {
   width: 100%;
- height: 100vh;
- background-color: chartreuse;
+  height: 100vh;
+  background-color: chartreuse;
 }
 
 /* Basisbilder */
@@ -63,25 +68,25 @@ body {
 }
 
 #title-text-container {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 3;
-text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
 }
 
 /* Schriftgrösse und Stil */
 .title-text {
   font-size: 4rem;
   margin-bottom: 1rem;
-  color: #ffd553;
+  color: var(--text);
 } 
 
 .title-description {
   font-size: 1.2rem;
   line-height: 1.4;
-  color: #ffd553;
+  color: var(--text);
 }
 
 #opener-quote {
@@ -91,7 +96,7 @@ text-align: center;
   margin: 0 auto;
   max-width: 800px;
   padding: 1rem 1rem;
-  color: #ffd553;
+  color: var(--text);
 }
 
 /* --- OPENER SECTION --- */
@@ -100,7 +105,7 @@ text-align: center;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #3f75af;
+  background-color: var(--bg);
 }
 
 /* Ellipsen fixiert als Hintergrund */
@@ -126,22 +131,20 @@ text-align: center;
 #story-title-container {
   position: absolute;
   top: 50%;
-  left: 0; /* Statt 50% */
-  transform: translateY(-50%); /* Nur vertikal zentrieren */
+  left: 0;
+  transform: translateY(-50%);
   white-space: nowrap;
   z-index: 2;
   width: 100%;
   overflow: visible;
 }
 
-
 #story-title {
-  font-size: 20vw; /* Extrem gross – ragt über den Viewport hinaus */
-  color: #ffd553;
+  font-size: 20vw;
+  color: var(--text);
   font-weight: 700;
   text-transform: uppercase;
 }
-
 
 /* --- STORY CHAPTER 0 --- */
 #story-chapter-0 {
@@ -159,7 +162,7 @@ text-align: center;
   flex: 1;
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #ffd553
+  color: var(--text)
 }
 
 /* Rechte Spalte (Bild + Text Plants) */
@@ -167,9 +170,9 @@ text-align: center;
   flex: 1;
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #ffd553;
+  color: var(--text);
   position: relative;
-  top: 20vh; /* macht die rechte Spalte etwas tiefer */
+  top: 20vh;
 
     img {
     width: 100%;
@@ -177,7 +180,6 @@ text-align: center;
     margin-bottom: 2rem;
     display: block;
     object-fit: cover;
-    border-radius: 0.5rem;
     }
 }
 
@@ -213,7 +215,7 @@ text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #3f75af;
+  color: var(--bg);
   font-size: 8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -223,43 +225,38 @@ text-align: center;
 }
 
 /* --- TEXT SECTION (direkt nach Parallax) --- */
-
-/* Kapitel-Block: Text oben, Carousel unten, gesamthaft 100vh */
 #chapter-1-container {
   display: flex;
-  flex-direction: column;        /* stapelt text über carousel */
-  justify-content: space-between;/* text oben, carousel unten */
-  height: 100vh;                 /* füllt den Viewport exakt */
-  padding: 4vh 0;              /* aussenabstand */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 4vh 0;
   box-sizing: border-box;
-  margin: 0;                     /* kein Zwischenraum nach oben */
+  margin: 0;
 }
 
-/* Text-Container oben */
 #chapter-1-container-text {
-  width: 50%;       /* gleiche Breite wie linke Spalte zuvor */
-  align-self: flex-end; /* an der linken Seite */
-  padding-right: 10vw;  /* innenabstand */
+  width: 50%;
+  align-self: flex-end;
+  padding-right: 10vw;
   padding-left: 2vw;
-  color: #ffd553;
+  color: var(--text);
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
 /* --- CAROUSEL SECTION --- */
-/* Der Wrapper ist der sichtbare Rahmen, bleibt beim Pinning stehen */
 #carusel-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden; /* nur hier verstecken wir Überlauf */
+  overflow: hidden;
   display: flex;
-  align-items: flex-end; /* Bilder unten ausrichten */
-  padding-bottom: 2vh; /* etwas Luft zum unteren Rand */
-  padding: 0 1vw; /* etwas Luft zu den Seiten */
+  align-items: flex-end;
+  padding-bottom: 2vh;
+  padding: 0 1vw;
   box-sizing: border-box;
 }
 
-/* Das scrollende Band mit allen Bildern */
 #carusel-horizontal-scroll {
   display: flex;
   gap: 2vw;
@@ -267,11 +264,9 @@ text-align: center;
   will-change: transform;
 }
 
-/* Einzelne Items */
 .carusel-item {
-  flex: 0 0 45vw;  /* zwei Bilder gleichzeitig sichtbar, 45vw Breite */
+  flex: 0 0 45vw;
   height: 100%;
-  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -280,19 +275,18 @@ text-align: center;
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 1rem;
 }
 
 #chapter-2-container {
-  height: 100vh;                 /* füllt den Viewport exakt */
+  height: 100vh;
   padding: 5vh 10vw;             
 }
 
 #chapter-2-container-text {
-  width: 50%;       /* gleiche Breite wie linke Spalte zuvor */
-  align-self: flex-start; /* an der linken Seite */
-  padding-right: 2vw;  /* innenabstand */
-  color: #ffd553;
+  width: 50%;
+  align-self: flex-start;
+  padding-right: 2vw;
+  color: var(--text);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -314,11 +308,10 @@ text-align: center;
   justify-content: space-around;
   position: relative;
   width: 75%;
-  top: 50vh; /* vorher 75vh → jetzt weiter oben */
+  top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .img-group div {
   position: relative;
@@ -329,26 +322,30 @@ text-align: center;
   background-size: contain;
 }
 
-.img-group div:nth-child(1) {
-  background-image: url("https://assets.codepen.io/16327/scroll-flair-1.png");
-}
-.img-group div:nth-child(2) {
-  background-image: url("https://assets.codepen.io/16327/scroll-flair-2.png");
-}
-.img-group div:nth-child(3) {
-  background-image: url("https://assets.codepen.io/16327/scroll-flair-3.png");
-}
-.img-group div:nth-child(4) {
-  background-image: url("https://assets.codepen.io/16327/scroll-flair-4.png");
-}
-.img-group div:nth-child(5) {
-  background-image: url("https://assets.codepen.io/16327/flair.png");
+.img-group div:nth-child(1) { 
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-1.png"); 
+} 
+
+.img-group div:nth-child(2) { 
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-2.png"); 
+} 
+
+.img-group div:nth-child(3) { 
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-3.png"); 
+} 
+
+.img-group div:nth-child(4) { 
+  background-image: url("https://assets.codepen.io/16327/scroll-flair-4.png"); 
+} 
+
+.img-group div:nth-child(5) { 
+  background-image: url("https://assets.codepen.io/16327/flair.png"); 
 }
 
 .img-group div::before {
   content: attr(data-speed);
   position: absolute;
-  color: #fffce1;
+  color: var(--text);
   top: -2rem;
   width: 100%;
   text-align: center;
@@ -357,15 +354,15 @@ text-align: center;
 }
 
 #chapter-3-container {
-  height: 100vh;                 /* füllt den Viewport exakt */
+  height: 100vh;
   padding: 5vh 5vw;   
   display: flex;     
   gap: 2vw;     
 }
 
 #chapter-3-text {
-  align-self: flex-start; /* an der linken Seite */
-  color: #ffd553;
+  align-self: flex-start;
+  color: var(--text);
   font-size: 5.5rem;
   line-height: 1;
 }
@@ -377,7 +374,6 @@ text-align: center;
     height: auto;
     display: block;
     object-fit: cover;
-    border-radius: 0.5rem;
   }
 }
 
@@ -417,7 +413,7 @@ text-align: center;
 
 /* Textblöcke allgemein */
 .chapter-4-text {
-  color: #ffd553;
+  color: var(--text);
   font-size: 5.5rem;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -454,11 +450,10 @@ text-align: center;
   left: 50%;
   top: 0;
   width: 4px;
-  height: 0; /* wächst via GSAP */
-  background-color: #ffd553;
+  height: 0;
+  background-color: var(--text);
   transform: translateX(-50%);
-  z-index: 999; /* sehr wichtig */
-  border-radius: 2px;
+  z-index: 999;
 }
 
 /* --- PARALLAX CHAPTER 5 --- */
@@ -493,7 +488,7 @@ text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #3f75af;
+  color: var(--bg);
   font-size: 8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -517,7 +512,7 @@ text-align: center;
   align-self: flex-end; 
   padding-right: 10vw;  
   padding-left: 2vw;
-  color: #ffd553;
+  color: var(--text);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -572,8 +567,6 @@ text-align: center;
   bottom: -1rem;
   right: -1rem;
   left: -1rem;
-  outline: 1.5px dashed var(--light);
-  border-radius: 10px;
 }
 
 .slide {
@@ -589,5 +582,4 @@ text-align: center;
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 10px;
 }
