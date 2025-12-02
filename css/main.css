@@ -3,7 +3,7 @@
 @import "reset.css";
 
 :root {
-  --bg: #3f75af;
+  --bg: #363a4e;
   --text: #ffd553;
 }
 
@@ -92,8 +92,8 @@ body {
 #opener-quote {
   font-size: 2rem;
   font-style: italic;
-  text-align: center;
-  margin: 0 auto;
+  text-align: left;
+  margin: 20000rem large small;
   max-width: 800px;
   padding: 1rem 1rem;
   color: var(--text);
@@ -106,6 +106,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--bg);
+  text-align: left;
 }
 
 /* Ellipsen fixiert als Hintergrund */
@@ -173,7 +174,6 @@ body {
   color: var(--text);
   position: relative;
   top: 20vh;
-
     img {
     width: 100%;
     height: auto;

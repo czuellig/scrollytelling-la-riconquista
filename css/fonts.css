@@ -1,1 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700&display=swap');
+/* --- FONT GROUP 1: HUMAN --- */
+@import url("https://use.typekit.net/qnw6pop.css");
+
+/* --- FONT GROUP 2: PLANTS --- */
+@import url("https://use.typekit.net/qnw6pop.css");
+
+/* --- FONT GROUP 3: TITLES --- */
+@import url("https://use.typekit.net/qnw6pop.css");
+
+/* FONT GROUP 1 — HUMAN TEXT */
+.font-human {
+    font-family: "arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* FONT GROUP 2 — PLANTS TEXT */
+.font-plants {
+    font-family: "tomarik-introvert", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: right;
+}
+
+/* FONT GROUP 3 — TITLES TEXT */
+.font-titles {
+    font-family: "tomarik-extrovert", serif;
+    font-weight: 400;
+    font-style: normal;
+}
