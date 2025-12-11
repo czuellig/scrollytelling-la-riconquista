@@ -1,3 +1,86 @@
+// -------------------------------------------------------------
+//   GSAP PLANT EDGE-REVEAL (KORRIGIERTE VERSION)
+// -------------------------------------------------------------
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Alle Pflanzen erfassen
+gsap.utils.toArray("#plant-layer .plant").forEach((plant, i) => {
+
+  // ---------------------------
+  // 1) Richtung korrekt bestimmen
+  // ---------------------------
+  let direction;
+
+  if (plant.dataset.direction) {
+    direction = plant.dataset.direction;
+  } else if (plant.classList.contains("left")) {
+    direction = "left";
+  } else if (plant.classList.contains("right")) {
+    direction = "right";
+  } else if (plant.classList.contains("top")) {
+    direction = "top";
+  } else if (plant.classList.contains("bottom")) {
+    direction = "bottom";
+  } else {
+    direction = "left"; // fallback
+  }
+
+  // ---------------------------
+  // 2) Zufallsposition ENTWEDER entlang der Höhe oder Breite
+  //    (je nach Richtung)
+  //    → kann durch inline CSS überschrieben werden
+  // ---------------------------
+
+  if (direction === "left" || direction === "right") {
+    // positioniert entlang der Seite zufällig
+    const randTop = Math.round(5 + Math.random() * 75); // 5–80vh
+    plant.style.setProperty("--plant-top", randTop + "vh");
+  } else {
+    const randLeft = Math.round(3 + Math.random() * 92); // 3–95vw
+    plant.style.setProperty("--plant-left", randLeft + "vw");
+  }
+
+  // ---------------------------
+  // 3) GSAP Animation definieren
+  // ---------------------------
+
+  const animProps = {
+    opacity: 1,
+    ease: "power3.out",
+    duration: 1.6
+  };
+
+  // Translate auf 0 animieren (CSS setzt initiale translate ausserhalb)
+  if (direction === "left" || direction === "right") {
+    animProps.x = 0;
+  } else {
+    animProps.y = 0;
+  }
+
+  // Sicherheits-Set (damit CSS-Startwerte greifen)
+  gsap.set(plant, { opacity: 0 });
+
+  // ---------------------------
+  // 4) ScrollTrigger erstellen
+  // ---------------------------
+
+  gsap.to(plant, {
+    ...animProps,
+    scrollTrigger: {
+      trigger: "body",
+      start: () => `top+=${150 * i} top`,  
+      end: () => `top+=${150 * i + 300} top`,
+      scrub: true,
+      // markers: true, // Debug-Option
+    },
+    onStart: () => gsap.set(plant, { opacity: 1 })
+  });
+
+});
+
+
+
 gsap.from("#title-text-container", {
     y: 200,
     opacity: 0,
@@ -363,3 +446,4 @@ for (let i = 0; i < slidesCount - 1; i++) {
 
 /* Abschluss */
 tlRodolex.to({}, { duration: delay });
+
