@@ -3,8 +3,8 @@
 @import "reset.css";
 
 :root {
-  --bg: #363a4e;
-  --text: #ffd553;
+  --bg: #2b2e39;
+  --text: #b8e2ff;
 }
 
 body {
@@ -642,4 +642,13 @@ body {
   width: 400px;
   height: 400px;
   object-fit: cover;
+}
+
+.img-filter {
+  filter:
+    grayscale(10%)
+    sepia(10%)
+    hue-rotate(200deg)
+    saturate(150%)
+    brightness(0.9);
 }
