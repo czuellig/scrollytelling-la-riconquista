@@ -126,33 +126,8 @@ const smoother = ScrollSmoother.create({
   smooth: 1.2
 });
 
-let splitQuoteText = SplitText.create("#quote-text", {type:"lines"});
 
-gsap.from(splitQuoteText.lines, {
-    scrollTrigger: {
-        trigger: "#opener-quote",
-        start: "top 80%",
-    },
-    y: 50,
-    opacity: 0,
-    ease: "power2.out",
-    duration: 1,
-    stagger: 0.1,
-});
 
-let splitQuoteSource = SplitText.create("#quote-source", {type:"chars"});
-
-gsap.from(splitQuoteSource.chars, {
-    scrollTrigger: {
-        trigger: "#opener-quote",
-        start: "bottom 80%",
-    },
-    y: 50,
-    opacity: 0,
-    ease: "power2.out",
-    duration: 1,
-    stagger: 0.05,
-});
 
 // --- Szene 2: Opener – Titel bewegt sich horizontal ---
 
