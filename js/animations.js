@@ -306,60 +306,66 @@ lines.forEach((line) => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* --------------------------------------------------
-   1. Progressbar erscheint und wächst mit Scroll
--------------------------------------------------- */
+function animateChapter(chapterNumber) {
 
-// Fade-In
-gsap.fromTo(
-  "#chapter-4-progress",
-  { opacity: 0 },
-  {
-    opacity: 1,
-    duration: 0.6,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#chapter-4",
-      start: "top bottom",   // Section kommt ins Sichtfeld
-      once: true             // Fade-In nur beim ersten Mal
+  const chapter = `#chapter-${chapterNumber}`;
+  const progress = `#chapter-${chapterNumber}-progress`;
+
+  /* --------------------------------------------------
+     1. Progressbar erscheint und wächst mit Scroll
+  -------------------------------------------------- */
+
+  // Fade-In
+  gsap.fromTo(
+    progress,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: chapter,
+        start: "top bottom",
+        once: true
+      }
     }
-  }
-);
+  );
 
-// Wachstum
-gsap.to("#chapter-4-progress", {
-  height: "100%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: "#chapter-4",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true
-  }
-});
-
-
-/* --------------------------------------------------
-   2. Texte erscheinen, wenn die Progressbar ihre Höhe erreicht
--------------------------------------------------- */
-
-function animateWhenReached(textID) {
-  gsap.from(textID, {
-    opacity: 0,
-    x: textID.includes("mid-left") ? -150 : 150,
-    duration: 1.2,
-    ease: "power3.out",
+  // Wachstum
+  gsap.to(progress, {
+    height: "100%",
+    ease: "none",
     scrollTrigger: {
-      trigger: textID,
-      start: "top center+=10%",
-      toggleActions: "play none none reverse"
+      trigger: chapter,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
     }
   });
+
+  /* --------------------------------------------------
+     2. Texte erscheinen
+  -------------------------------------------------- */
+
+  function animateWhenReached(textID) {
+    gsap.from(textID, {
+      opacity: 0,
+      x: textID.includes("mid-left") ? -150 : 150,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: textID,
+        start: "top center+=10%",
+        toggleActions: "play none none reverse"
+      }
+    });
+  }
+
+  animateWhenReached(`#chapter-${chapterNumber}-text-mid-left`);
+  animateWhenReached(`#chapter-${chapterNumber}-text-top-right`);
+  animateWhenReached(`#chapter-${chapterNumber}-text-bottom-right`);
 }
 
-animateWhenReached("#chapter-4-text-mid-left");
-animateWhenReached("#chapter-4-text-top-right");
-animateWhenReached("#chapter-4-text-bottom-right");
 
   // --- Szene 7: Kapitel 5 – Parallax-Bild mit zentriertem Titel ---
 
@@ -455,4 +461,42 @@ for (let i = 0; i < slidesCount - 1; i++) {
 
 /* Abschluss */
 tlRodolex.to({}, { duration: delay });
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#chapter-7-end",
+    start: "90% bottom",
+    once: true,
+    markers: true
+  },
+  delay: 5
+})
+.from("#chapter-7-end-title", {
+  opacity: 0,
+  y: 40,
+  duration: 1.2,
+  ease: "power3.out"
+})
+.from("#chapter-7-end button", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  ease: "power3.out"
+}, "-=0.4");
+
+const backToTopButton = document.querySelector("#chapter-7-end button");
+
+backToTopButton.addEventListener("click", () => {
+  gsap.to(window, {
+    scrollTo: { y: 0 },
+    duration: 3,
+  });
+});
+
+
+
+animateChapter(4);
+animateChapter(6);
 

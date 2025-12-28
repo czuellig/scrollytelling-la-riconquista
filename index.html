@@ -13,8 +13,7 @@
     <header></header>
     <!-- Wächst über die gesamte Seite -->
     <!-- Pflanzen-Layer: Bilder kleben am jeweiligen Rand -->
-    <div id="plant-layer">
-      <!-- Beispiel: jeweils data-direction und optional inline style zur festen Positionierung -->
+    <!-- <div id="plant-layer">
       <img
         class="plant top"
         data-direction="top"
@@ -45,7 +44,7 @@
         src="/content/sketches/plants/wachsen_unten_2.webp"
         alt="Pflanze 5"
       />
-    </div>
+    </div> -->
 
     <div id="smooth-wrapper">
       <main class="smooth-content">
@@ -322,8 +321,35 @@
             </div>
           </div>
         </section>
-        <section>
-          <div id="placeholder"></div>
+        <section id="chapter-6">
+          <div id="chapter-6-progress"></div>
+
+          <div id="chapter-6-container">
+            <div
+              id="chapter-6-text-top-right"
+              class="chapter-6-text chapter-6-text-plants font-plants"
+            >
+              <p>cosa dovrei pensare?</p>
+            </div>
+
+            <div
+              id="chapter-6-text-mid-left"
+              class="chapter-6-text chapter-6-text-human font-human"
+            >
+              <p>Non abbiamo bisogno di essere controllate.</p>
+            </div>
+
+            <div
+              id="chapter-6-text-bottom-right"
+              class="chapter-6-text chapter-6-text-plants font-plants"
+            >
+              <p>Forse siamo noi a dover essere contenuti.</p>
+            </div>
+          </div>
+        </section>
+        <section id="chapter-7-end">
+          <h2 id="chapter-7-end-title" class="font-titles">la riconquista</h2>
+          <button>Torna all'inizio</button>
         </section>
       </main>
     </div>
@@ -331,6 +357,7 @@
     <script src="/js/gsap/ScrollTrigger.min.js"></script>
     <script src="/js/gsap/ScrollSmoother.min.js"></script>
     <script src="/js/gsap/SplitText.min.js"></script>
+    <script src="/js/gsap/ScrollToPlugin.min.js"></script>
     <script src="/js/animations.js"></script>
   </body>
 </html>

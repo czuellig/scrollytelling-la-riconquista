@@ -70,14 +70,6 @@ body {
 #plant-layer .plant.medium { height: calc(var(--plant-height,70vh) * 0.85); }
 #plant-layer .plant.large  { height: calc(var(--plant-height,70vh) * 1.05); }
 
-
-
-#placeholder {
-  width: 100%;
-  height: 100vh;
-  background-color: chartreuse;
-}
-
 /* Basisbilder */
 .title-img {
   width: 100%;
@@ -455,14 +447,15 @@ body {
   will-change: transform, opacity;
 }
 
-#chapter-4 {
+#chapter-4, #chapter-6 {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-#chapter-4-container {
+#chapter-4-container, #chapter-6-container {
   width: 100%;
   height: 100%;
   display: grid;
@@ -472,7 +465,7 @@ body {
 }
 
 /* Textblöcke allgemein */
-.chapter-4-text {
+.chapter-4-text, .chapter-6-text {
   color: var(--text);
   font-size: 5.5rem;
   font-weight: 400;
@@ -481,31 +474,27 @@ body {
 }
 
 /* individuelle Platzierung */
-#chapter-4-text-top-right {
+#chapter-4-text-top-right, #chapter-6-text-top-right {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   text-align: right;
 
 }
 
-#chapter-4-text-mid-left {
+#chapter-4-text-mid-left, #chapter-6-text-mid-left {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 
 }
 
-#chapter-4-text-bottom-right {
+#chapter-4-text-bottom-right, #chapter-6-text-bottom-right {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   text-align: right;
 
 } 
 
-#chapter-4 {
-  position: relative;
-}
-
-#chapter-4-progress {
+#chapter-4-progress, #chapter-6-progress {
   position: absolute;
   left: 50%;
   top: 0;
@@ -652,3 +641,61 @@ body {
     saturate(150%)
     brightness(0.9);
 }
+
+#chapter-7-end {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg);
+}
+
+/* Titel mittig */
+#chapter-7-end-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(3rem, 8vw, 8rem);
+  color: var(--text);
+}
+
+/* Button unten mittig */
+#chapter-7-end button {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 0.8rem 2.2rem;
+
+  font-family: 'K2D', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  opacity: 0.9;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+#chapter-7-end button:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+#chapter-7-end button::after {
+  content: "";
+  display: block;
+  margin: 0.4rem auto 0;
+  width: 1.2rem;
+  height: 1px;
+  background-color: var(--text);
+}
+
