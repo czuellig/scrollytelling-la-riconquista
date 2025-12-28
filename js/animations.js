@@ -126,9 +126,6 @@ const smoother = ScrollSmoother.create({
   smooth: 1.2
 });
 
-
-
-
 // --- Szene 2: Opener – Titel bewegt sich horizontal ---
 
 const title = document.querySelector("#story-title");
