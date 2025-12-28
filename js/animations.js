@@ -1,14 +1,30 @@
 // -------------------------------------------------------------
-//   GSAP PLANT EDGE-REVEAL (KORRIGIERTE VERSION)
+//   GSAP PLANT EDGE-REVEAL FÜR 5 DEFINIERTE SCROLL-PUNKTE
 // -------------------------------------------------------------
-
 gsap.registerPlugin(ScrollTrigger);
 
-// Alle Pflanzen erfassen
-gsap.utils.toArray("#plant-layer .plant").forEach((plant, i) => {
+// Abschnitts-Trigger für die 5 Pflanzen
+const revealPoints = [
+  "#opener",
+  "#story-chapter-0",
+  "#parallax-chapter-1-container",
+  "#chapter-2-container",
+  "#chapter-4"
+];
+
+// Alle Pflanzen im Plant-Layer
+const plants = gsap.utils.toArray("#plant-layer .plant");
+
+// Falls Anzahl nicht stimmt → warnen
+if (plants.length < revealPoints.length) {
+  console.warn("Es wurden weniger Pflanzen als Scroll-Punkte definiert!");
+}
+
+// Jede Pflanze einem Scrollpunkt zuordnen
+plants.forEach((plant, index) => {
 
   // ---------------------------
-  // 1) Richtung korrekt bestimmen
+  // 1) Richtung korrekt erkennen
   // ---------------------------
   let direction;
 
@@ -27,57 +43,50 @@ gsap.utils.toArray("#plant-layer .plant").forEach((plant, i) => {
   }
 
   // ---------------------------
-  // 2) Zufallsposition ENTWEDER entlang der Höhe oder Breite
-  //    (je nach Richtung)
-  //    → kann durch inline CSS überschrieben werden
+  // 2) Zufallsposition entlang der Kante
   // ---------------------------
-
   if (direction === "left" || direction === "right") {
-    // positioniert entlang der Seite zufällig
-    const randTop = Math.round(5 + Math.random() * 75); // 5–80vh
+    const randTop = Math.round(5 + Math.random() * 75);
     plant.style.setProperty("--plant-top", randTop + "vh");
   } else {
-    const randLeft = Math.round(3 + Math.random() * 92); // 3–95vw
+    const randLeft = Math.round(3 + Math.random() * 92);
     plant.style.setProperty("--plant-left", randLeft + "vw");
   }
 
   // ---------------------------
-  // 3) GSAP Animation definieren
+  // 3) Animationsparameter
   // ---------------------------
-
   const animProps = {
     opacity: 1,
     ease: "power3.out",
     duration: 1.6
   };
 
-  // Translate auf 0 animieren (CSS setzt initiale translate ausserhalb)
   if (direction === "left" || direction === "right") {
     animProps.x = 0;
   } else {
     animProps.y = 0;
   }
 
-  // Sicherheits-Set (damit CSS-Startwerte greifen)
   gsap.set(plant, { opacity: 0 });
 
   // ---------------------------
-  // 4) ScrollTrigger erstellen
+  // 4) ScrollTrigger für den spezifischen Abschnitt
   // ---------------------------
-
   gsap.to(plant, {
     ...animProps,
     scrollTrigger: {
-      trigger: "body",
-      start: () => `top+=${150 * i} top`,  
-      end: () => `top+=${150 * i + 300} top`,
+      trigger: revealPoints[index],   // ← Abschnitt, der Pflanze triggert
+      start: "top center",            // erscheint wenn Kapitel ins Zentrum scrollt
+      end: "bottom center",
       scrub: true,
-      // markers: true, // Debug-Option
+      // markers: true, // Debug falls nötig
     },
     onStart: () => gsap.set(plant, { opacity: 1 })
   });
 
 });
+
 
 
 
