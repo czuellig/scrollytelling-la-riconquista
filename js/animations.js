@@ -7,49 +7,53 @@ const plants = gsap.utils.toArray("#plant-layer .plant");
 
 plants.forEach((plant) => {
 
-  // Richtung bestimmen
   const direction = plant.dataset.direction || "left";
-
-  // Trigger bestimmen (Pflicht!)
   const triggerElement = plant.dataset.trigger;
+
   if (!triggerElement) {
     console.warn("Pflanze ohne data-trigger:", plant);
     return;
   }
 
-  // Animationsziel
-  const animProps = {
+  // Start- & Zielwerte
+  let fromVars = { opacity: 0 };
+  let toVars = {
     opacity: 1,
+    ease: "power3.out",
     duration: 1.6,
-    ease: "power3.out"
-  };
-
-  if (direction === "left" || direction === "right") {
-    animProps.x = 0;
-  } else {
-    animProps.y = 0;
-  }
-
-  // Startzustand erzwingen
-  gsap.set(plant, { opacity: 0 });
-
-  // ScrollTrigger
-  gsap.to(plant, {
-    ...animProps,
     scrollTrigger: {
       trigger: triggerElement,
       start: "top center",
       end: "bottom center",
       scrub: true,
-      // markers: true, // bei Bedarf aktivieren
-    },
-    onStart: () => gsap.set(plant, { opacity: 1 })
-  });
+      // markers: true
+    }
+  };
+
+  // Richtungsspezifische Bewegung
+  if (direction === "left") {
+    fromVars.x = "-100%";
+    toVars.x = "0%";
+  }
+
+  if (direction === "right") {
+    fromVars.x = "100%";
+    toVars.x = "0%";
+  }
+
+  if (direction === "top") {
+    fromVars.y = "-100%";
+    toVars.y = "0%";
+  }
+
+  if (direction === "bottom") {
+    fromVars.y = "100%";
+    toVars.y = "0%";
+  }
+
+  gsap.fromTo(plant, fromVars, toVars);
 
 });
-
-
-
 
 
 gsap.from("#title-text-container", {
