@@ -12,39 +12,58 @@
   <body>
     <header></header>
     <!-- Wächst über die gesamte Seite -->
-    <!-- Pflanzen-Layer: Bilder kleben am jeweiligen Rand -->
-    <!-- <div id="plant-layer">
+    <!-- Pflanzen-Layer -->
+    <div id="plant-layer">
+      <!-- Pflanze 1 – erscheint bei #opener -->
       <img
-        class="plant top"
+        class="plant top large"
         data-direction="top"
+        data-trigger="#opener"
+        style="--plant-left: 12vw"
         src="/content/sketches/plants/wachsen_oben_1.webp"
-        alt="Pflanze 1"
+        alt="Pflanze oben links"
       />
+
+      <!-- Pflanze 2 – erscheint bei Kapitel 0 -->
       <img
-        class="plant right"
+        class="plant right medium"
         data-direction="right"
-        src="/content/sketches/plants/wachsen_rechts_1.webp"
-        alt="Pflanze 2"
+        data-trigger="#story-chapter-0"
+        style="--plant-top: 44vh"
+        src="/content/sketches/plants/jungle/rechts_unten_1.webp"
+        alt="Pflanze rechts oben"
       />
+
+      <!-- Pflanze 3 – Parallax Kapitel 1 -->
       <img
         class="plant top"
         data-direction="top"
+        data-trigger="#parallax-chapter-1-container"
+        style="--plant-left: 62vw"
         src="/content/sketches/plants/wachsen_oben_2.webp"
-        alt="Pflanze 3"
+        alt="Pflanze oben rechts"
       />
+
+      <!-- Pflanze 4 – Kapitel 2 -->
       <img
         class="plant bottom"
         data-direction="bottom"
+        data-trigger="#chapter-2-container"
+        style="--plant-left: 28vw"
         src="/content/sketches/plants/wachsen_unten_1.webp"
-        alt="Pflanze 4"
+        alt="Pflanze unten links"
       />
+
+      <!-- Pflanze 5 – Kapitel 4 -->
       <img
-        class="plant bottom"
+        class="plant bottom small"
         data-direction="bottom"
+        data-trigger="#chapter-4"
+        style="--plant-left: 78vw"
         src="/content/sketches/plants/wachsen_unten_2.webp"
-        alt="Pflanze 5"
+        alt="Pflanze unten rechts"
       />
-    </div> -->
+    </div>
 
     <div id="smooth-wrapper">
       <main class="smooth-content">
@@ -78,11 +97,13 @@
         </section>
         <section id="opener">
           <div id="opener-quote">
-            <p id="quote-text" class="text-human font-human">
+            <p id="quote-text">
               "Eines Tages, als ich an meinem Schreibtisch sass und zum Fenster
               hinausschaute, sah ich, dass sich auf der Fernsehantenne des
-              gegenüberliegenden Hauses ein Adler niedergelassen hatte."<br /><br />
-              – Die Rückeroberung, Franz Hohler (1982)
+              gegenüberliegenden Hauses ein Adler niedergelassen hatte.
+            </p>
+            <p id="quote-source">
+              <br />Die Rückeroberung, Franz Hohler (1982)
             </p>
           </div>
           <div id="ellipse-container">
@@ -347,7 +368,7 @@
         </section>
         <section id="chapter-7-end">
           <h2 id="chapter-7-end-title" class="font-titles">la riconquista</h2>
-          <button>Torna all'inizio</button>
+          <button id="chapter-7-end-button">Torna all'inizio</button>
         </section>
       </main>
     </div>

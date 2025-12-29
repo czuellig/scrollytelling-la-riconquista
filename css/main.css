@@ -12,63 +12,64 @@ body {
   background-color: var(--bg);
 }
 
-/* Pflanzen-Layer über der Seite */
+/* Pflanzen-Layer über allem */
 #plant-layer {
   position: fixed;
-  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
   overflow: visible;
 }
 
-/* Grundstil für jede Pflanze */
+/* Grundstil */
 #plant-layer .plant {
   position: absolute;
-  max-width: none;
   width: auto;
-  height: calc(var(--plant-height, 70vh)); /* default: 70vh, anpassbar */
+  height: calc(var(--plant-height, 70vh));
   opacity: 0;
-  transform: translate3d(0,0,0);
   will-change: transform, opacity;
   user-select: none;
 }
 
-/* ANKER-Positionen: Pflanze klebt am Rand.
-   Wir setzen initial eine translate so, dass sie ausserhalb des Viewports liegt.
-   GSAP animiert translate → 0. */
+/* LINKER RAND */
 #plant-layer .plant.left {
   left: 0;
-  /* top wird per JS gesetzt (CSS-Variable --plant-top), oder per inline style */
   top: var(--plant-top, 10vh);
-  transform: translateX(-105%);  /* startet ausserhalb links */
+  transform: translateX(calc(-100% + 2px));
   transform-origin: left center;
 }
 
+/* RECHTER RAND */
 #plant-layer .plant.right {
   right: 0;
   top: var(--plant-top, 10vh);
-  transform: translateX(105%);   /* startet ausserhalb rechts */
+  transform: translateX(calc(100% - 2px));
   transform-origin: right center;
 }
 
+/* OBERER RAND */
 #plant-layer .plant.top {
   top: 0;
   left: var(--plant-left, 10vw);
-  transform: translateY(-105%);  /* startet ausserhalb oben */
+  transform: translateY(calc(-100% + 2px));
   transform-origin: center top;
 }
 
+/* UNTERER RAND */
 #plant-layer .plant.bottom {
   bottom: 0;
   left: var(--plant-left, 10vw);
-  transform: translateY(105%);   /* startet ausserhalb unten */
+  transform: translateY(calc(100% - 2px));
   transform-origin: center bottom;
 }
 
-/* Kleine Hilfsklasse, falls du einzelne Pflanzen kleiner/grosser machen willst */
-#plant-layer .plant.small  { height: calc(var(--plant-height,70vh) * 0.6); }
-#plant-layer .plant.medium { height: calc(var(--plant-height,70vh) * 0.85); }
-#plant-layer .plant.large  { height: calc(var(--plant-height,70vh) * 1.05); }
+
+/* Grössen-Helfer */
+#plant-layer .plant.small  { height: 45vh; }
+#plant-layer .plant.medium { height: 60vh; }
+#plant-layer .plant.large  { height: 80vh; }
+
+/* --- TITLE SECTION --- */
 
 /* Basisbilder */
 .title-img {
@@ -145,9 +146,16 @@ body {
   font-size: 2rem;
   text-align: center;
   max-width: 800px;
-  padding: 1rem 1rem;
+  padding: 2rem 2rem;
   color: var(--text);
   margin: 0 auto;
+}
+
+#quote-text, #quote-source {
+   flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text)
 }
 
 /* --- OPENER SECTION --- */
@@ -659,11 +667,12 @@ body {
 }
 
 /* Button unten mittig */
-#chapter-7-end button {
+#chapter-7-end-button {
   position: absolute;
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 1;
 
   background: transparent;
   color: var(--text);
@@ -676,20 +685,19 @@ body {
   text-transform: uppercase;
 
   cursor: pointer;
-  opacity: 0.9;
 
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    background-color 0.3s ease;
 }
 
-#chapter-7-end button:hover {
+#chapter-7-end-button:hover {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
+  transition: transform 200ms ease, opacity 200ms ease;
+  will-change: transform, opacity;
+  background-color: var(--text);
+  color: var(--bg);
 }
 
-#chapter-7-end button::after {
+#chapter-7-end-button:after {
   content: "";
   display: block;
   margin: 0.4rem auto 0;

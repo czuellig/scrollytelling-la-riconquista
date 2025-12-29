@@ -1,65 +1,27 @@
 // -------------------------------------------------------------
-//   GSAP PLANT EDGE-REVEAL FÜR 5 DEFINIERTE SCROLL-PUNKTE
+//   GSAP – PFLANZEN MIT INDIVIDUELLEM TRIGGER
 // -------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger);
 
-// Abschnitts-Trigger für die 5 Pflanzen
-const revealPoints = [
-  "#opener",
-  "#story-chapter-0",
-  "#parallax-chapter-1-container",
-  "#chapter-2-container",
-  "#chapter-4"
-];
-
-// Alle Pflanzen im Plant-Layer
 const plants = gsap.utils.toArray("#plant-layer .plant");
 
-// Falls Anzahl nicht stimmt → warnen
-if (plants.length < revealPoints.length) {
-  console.warn("Es wurden weniger Pflanzen als Scroll-Punkte definiert!");
-}
+plants.forEach((plant) => {
 
-// Jede Pflanze einem Scrollpunkt zuordnen
-plants.forEach((plant, index) => {
+  // Richtung bestimmen
+  const direction = plant.dataset.direction || "left";
 
-  // ---------------------------
-  // 1) Richtung korrekt erkennen
-  // ---------------------------
-  let direction;
-
-  if (plant.dataset.direction) {
-    direction = plant.dataset.direction;
-  } else if (plant.classList.contains("left")) {
-    direction = "left";
-  } else if (plant.classList.contains("right")) {
-    direction = "right";
-  } else if (plant.classList.contains("top")) {
-    direction = "top";
-  } else if (plant.classList.contains("bottom")) {
-    direction = "bottom";
-  } else {
-    direction = "left"; // fallback
+  // Trigger bestimmen (Pflicht!)
+  const triggerElement = plant.dataset.trigger;
+  if (!triggerElement) {
+    console.warn("Pflanze ohne data-trigger:", plant);
+    return;
   }
 
-  // ---------------------------
-  // 2) Zufallsposition entlang der Kante
-  // ---------------------------
-  if (direction === "left" || direction === "right") {
-    const randTop = Math.round(5 + Math.random() * 75);
-    plant.style.setProperty("--plant-top", randTop + "vh");
-  } else {
-    const randLeft = Math.round(3 + Math.random() * 92);
-    plant.style.setProperty("--plant-left", randLeft + "vw");
-  }
-
-  // ---------------------------
-  // 3) Animationsparameter
-  // ---------------------------
+  // Animationsziel
   const animProps = {
     opacity: 1,
-    ease: "power3.out",
-    duration: 1.6
+    duration: 1.6,
+    ease: "power3.out"
   };
 
   if (direction === "left" || direction === "right") {
@@ -68,24 +30,24 @@ plants.forEach((plant, index) => {
     animProps.y = 0;
   }
 
+  // Startzustand erzwingen
   gsap.set(plant, { opacity: 0 });
 
-  // ---------------------------
-  // 4) ScrollTrigger für den spezifischen Abschnitt
-  // ---------------------------
+  // ScrollTrigger
   gsap.to(plant, {
     ...animProps,
     scrollTrigger: {
-      trigger: revealPoints[index],   // ← Abschnitt, der Pflanze triggert
-      start: "top center",            // erscheint wenn Kapitel ins Zentrum scrollt
+      trigger: triggerElement,
+      start: "top center",
       end: "bottom center",
       scrub: true,
-      // markers: true, // Debug falls nötig
+      // markers: true, // bei Bedarf aktivieren
     },
     onStart: () => gsap.set(plant, { opacity: 1 })
   });
 
 });
+
 
 
 
@@ -125,6 +87,30 @@ const smoother = ScrollSmoother.create({
   content: ".smooth-content",
   smooth: 1.2
 });
+
+let splitQuoteText = SplitText.create("#quote-text", {type:"lines"}); 
+
+gsap.from(splitQuoteText.lines, { 
+  scrollTrigger: { 
+    trigger: "#opener-quote", 
+    start: "bottom 80%", 
+    markers: true, }, 
+    y: 50, opacity: 0, 
+    ease: "power2.out", 
+    duration: 1, 
+    stagger: 0.1, }); 
+    
+    let splitQuoteSource = SplitText.create("#quote-source", {type:"chars"}); 
+    
+    gsap.from(splitQuoteSource.chars, { 
+      scrollTrigger: { 
+        trigger: "#opener-quote", 
+        start: "center 20%", }, 
+        y: 50, 
+        opacity: 0, 
+        ease: "power2.out", 
+        duration: 1, 
+        stagger: 0.05, });
 
 // --- Szene 2: Opener – Titel bewegt sich horizontal ---
 
@@ -443,7 +429,7 @@ gsap.timeline({
     once: true,
     markers: true
   },
-  delay: 5
+  delay: 3
 })
 .from("#chapter-7-end-title", {
   opacity: 0,
@@ -458,7 +444,7 @@ gsap.timeline({
   ease: "power3.out"
 }, "-=0.4");
 
-const backToTopButton = document.querySelector("#chapter-7-end button");
+const backToTopButton = document.querySelector("#chapter-7-end-button");
 
 backToTopButton.addEventListener("click", () => {
   gsap.to(window, {
