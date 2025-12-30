@@ -312,7 +312,7 @@ function animateChapter(chapterNumber) {
   function animateWhenReached(textID) {
     gsap.from(textID, {
       opacity: 0,
-      x: textID.includes("mid-left") ? -150 : 150,
+      x: textID.includes("left") ? -150 : 150,
       duration: 1.2,
       ease: "power3.out",
       scrollTrigger: {
@@ -326,6 +326,9 @@ function animateChapter(chapterNumber) {
   animateWhenReached(`#chapter-${chapterNumber}-text-mid-left`);
   animateWhenReached(`#chapter-${chapterNumber}-text-top-right`);
   animateWhenReached(`#chapter-${chapterNumber}-text-bottom-right`);
+   animateWhenReached(`#chapter-${chapterNumber}-text-mid-right`);
+  animateWhenReached(`#chapter-${chapterNumber}-text-top-left`);
+  animateWhenReached(`#chapter-${chapterNumber}-text-bottom-left`);
 }
 
 

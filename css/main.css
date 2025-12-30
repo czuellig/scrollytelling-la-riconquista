@@ -463,7 +463,16 @@ body {
   position: relative;
 }
 
-#chapter-4-container, #chapter-6-container {
+#chapter-4-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5vh 8vw;
+}
+
+ #chapter-6-container {
   width: 100%;
   height: 100%;
   display: grid;
@@ -473,7 +482,7 @@ body {
 }
 
 /* Textblöcke allgemein */
-.chapter-4-text, .chapter-6-text {
+.chapter-4-text {
   color: var(--text);
   font-size: 5.5rem;
   font-weight: 400;
@@ -481,24 +490,54 @@ body {
   line-height: 1.2;
 }
 
+.chapter-6-text {
+  color: var(--text);
+  font-size: 4.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
 /* individuelle Platzierung */
-#chapter-4-text-top-right, #chapter-6-text-top-right {
+#chapter-4-text-top-right {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   text-align: right;
 
 }
 
-#chapter-4-text-mid-left, #chapter-6-text-mid-left {
+#chapter-4-text-mid-left {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 
 }
 
-#chapter-4-text-bottom-right, #chapter-6-text-bottom-right {
+#chapter-4-text-bottom-right {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   text-align: right;
+
+} 
+
+/* individuelle Platzierung */
+#chapter-6-text-top-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  text-align: left;
+
+}
+
+#chapter-6-text-mid-right {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  text-align: right;
+
+}
+
+#chapter-6-text-bottom-left {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  text-align: left;
 
 } 
 
