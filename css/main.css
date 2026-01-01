@@ -3,8 +3,8 @@
 @import "reset.css";
 
 :root {
-  --bg: #2b2e39;
-  --text: #b8e2ff;
+  --bg: #e7e1c1;
+  --text: #675D8C;
 }
 
 body {
@@ -135,12 +135,13 @@ body {
   font-size: 4rem;
   margin-bottom: 1rem;
   color: var(--text);
+  color: #e7e1c1;
 } 
 
 .title-description {
   font-size: 1.2rem;
   line-height: 1.4;
-  color: var(--text);
+  color: #e7e1c1;
 }
 
 #opener-quote {
@@ -204,7 +205,6 @@ body {
   font-size: 20vw;
   color: var(--text);
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 /* --- STORY CHAPTER 0 --- */
@@ -678,15 +678,6 @@ body {
   width: 400px;
   height: 400px;
   object-fit: cover;
-}
-
-.img-filter {
-  filter:
-    grayscale(10%)
-    sepia(10%)
-    hue-rotate(200deg)
-    saturate(150%)
-    brightness(0.9);
 }
 
 #chapter-7-end {
