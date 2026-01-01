@@ -17,7 +17,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 500;
   overflow: visible;
 }
 
@@ -168,6 +168,10 @@ body {
   overflow: hidden;
   background-color: var(--bg);
   text-align: left;
+  background-image: url("/content/sketches/background-img.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Ellipsen fixiert als Hintergrund */
@@ -685,6 +689,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: var(--bg);
+  z-index: 999;
 }
 
 /* Titel mittig */
@@ -695,6 +700,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: clamp(3rem, 8vw, 8rem);
   color: var(--text);
+   z-index: 999;
 }
 
 /* Button unten mittig */
@@ -716,6 +722,7 @@ body {
   text-transform: uppercase;
 
   cursor: pointer;
+   z-index: 999;
 
 }
 
