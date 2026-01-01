@@ -5,7 +5,7 @@
 Interaktive Medien 5 / Visualisieren 5 Projekt von Livia Vogt und Cédric Züllig (mmp23c). <br>
 # la riconquista
 
-**la riconquista** ist eine interaktive Scrollytelling-Website, die mit Fotografien, Skizzen und Typografie eine Geschichte über Pflanzen im urbanen Raum erzählt. Inspiriert von Franz Hohlers Erzählung *Die Rückeroberung* thematisiert das Projekt das Spannungsfeld zwischen Stadt, Mensch und pflanzlichem Wachstum.
+**la riconquista** ist eine interaktive Scrollytelling-Website, die mit diversen Medien sowie Animationen eine Geschichte über Pflanzen im urbanen Raum erzählt. Inspiriert von Franz Hohlers Erzählung *Die Rückeroberung* (1982) thematisiert das Projekt das Spannungsfeld zwischen Mensch und pflanzlichem Wachstum.
 
 ## Inhaltsverzeichnis
 
@@ -20,9 +20,9 @@ Interaktive Medien 5 / Visualisieren 5 Projekt von Livia Vogt und Cédric Zülli
 
 ## Idee
 
-Die Projektidee entstand im Herbst, einer Jahreszeit, in der Pflanzen im urbanen Raum besonders sichtbar werden: Blätter verfärben sich, fallen auf Gehwege und Plätze und nehmen erneut Raum ein. Gleichzeitig steigt der Pflegeaufwand, und Pflanzen werden zunehmend als Störung wahrgenommen.
+Die Projektidee entstand im Herbst, einer Jahreszeit, in der Pflanzen im urbanen Raum besonders sichtbar werden: Blätter verfärben sich, fallen auf Gehwege und Plätze und nehmen erneut Raum ein. Gleichzeitig steigt der Pflegeaufwand, und Pflanzen werden zunehmend als Störung wahrgenommen. In diesem Prozess haben wir uns an den Schweizer Roman *Die Rückeroberung* erinnert und dessen Story über die Machtübernahme der Pflanzen.
 
-Ausgehend von dieser Beobachtung entstand die Idee, Pflanzen nicht als Dekoration, sondern als aktive Akteure im Stadtraum darzustellen. Das Projekt versteht sich als visuelle und narrative Auseinandersetzung mit Kontrolle, Pflege und natürlichem Wachstum.
+Ausgehend von dieser Beobachtung entstand die Idee, Pflanzen aus deren Rolle zur Dekoration herauszunehmen und als aktive Akteure im Stadtraum darzustellen. Das Projekt versteht sich als visuelle und narrative Auseinandersetzung mit Kontrolle, Pflege und natürlichem Wachstum.
 
 ---
 
