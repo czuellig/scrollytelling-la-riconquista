@@ -1,11 +1,11 @@
-# la reconquista - Scrollytelling Website
+# la riconquista - Scrollytelling Website
 
-![keyhublogo](/docpics/keyhub_logo_white.png)
+![plant](/content/media/icon.png)
 
-Interaktive Medien 5 / Visualisieren 5 Projekt von Livia Vogt und Cédric Züllig. <br>
-# La Reconquista
+Interaktive Medien 5 / Visualisieren 5 Projekt von Livia Vogt und Cédric Züllig (mmp23c). <br>
+# la riconquista
 
-**La Reconquista** ist eine interaktive Scrollytelling-Website, die mit Fotografien, Skizzen und Typografie eine Geschichte über Pflanzen im urbanen Raum erzählt. Inspiriert von Franz Hohlers Erzählung *Die Rückeroberung* thematisiert das Projekt das Spannungsfeld zwischen Stadt, Mensch und pflanzlichem Wachstum.
+**la riconquista** ist eine interaktive Scrollytelling-Website, die mit Fotografien, Skizzen und Typografie eine Geschichte über Pflanzen im urbanen Raum erzählt. Inspiriert von Franz Hohlers Erzählung *Die Rückeroberung* thematisiert das Projekt das Spannungsfeld zwischen Stadt, Mensch und pflanzlichem Wachstum.
 
 ## Inhaltsverzeichnis
 
@@ -30,36 +30,33 @@ Ausgehend von dieser Beobachtung entstand die Idee, Pflanzen nicht als Dekoratio
 
 Die Umsetzung begann mit gemeinsamen Spaziergängen in Zürich und Luzern. Dabei wurden Fotografien von Pflanzen im Stadtraum aufgenommen, sowohl als direktes Bildmaterial als auch als Grundlage für spätere Skizzen.
 
-Darauf aufbauend entstanden erste Entwürfe und ein visuelles Konzept in Adobe Photoshop, das als gemeinsame Arbeitsgrundlage diente. In den Layouts wurden Inhalte, Typografie und geplante Scroll- und Animationseffekte festgehalten und kommentiert.
+Darauf aufbauend entstanden erste Entwürfe und anschliessend ein visuelles Konzept in Adobe Photoshop, das als gemeinsame Arbeitsgrundlage diente. In den Layouts wurden Inhalte, Typografie und geplante Scroll- und Animationseffekte festgehalten und kommentiert.
 
-Die technische Umsetzung erfolgte anschliessend in Zusammenarbeit mit Interactive Media. Die Website wurde als Scrollytelling konzipiert, bei dem sich Text, Bild und Bewegung durch das Scrollen verändern und gegenseitig beeinflussen.
-
+*Kommentar Cédi.*
 ---
 
 ## Schwierigkeiten
 
-Eine zentrale Herausforderung bestand darin, alle Elemente – Story, Fotografien, Skizzen, Typografie, Layout und technische Möglichkeiten – in einer konsistenten Website zusammenzuführen. Besonders anspruchsvoll war es, den eigenen gestalterischen Anspruch mit dem aktuellen technischen Können und den geplanten Learnings im Bereich Interactive Media in Einklang zu bringen.
+Eine zentrale Herausforderung bestand darin, unterschiedliche Elemente – Story, Fotografien, Skizzen, Typografie, Layout und technische Möglichkeiten – in einer einzigen Website zusammenzuführen und ihnen gleichzeitig ausreichend Raum zu geben, damit es nicht überlastet wirkt.
+Wir wollten unsere Fähigkeiten im Coden unter Beweis stellen und neue Sachen ausprobieren. Trotzdem mussten wir realistisch bleiben. Es war ein aufwendiger Prozess, unsere Grenzen kennenzulernen - und unsere geplanten Effekte auf eine innovative Art umzusetzen.
 
-*Hier ergänzt der Teamkollege seine Perspektive.*
-
+*Kommentar Cédi.*
 ---
 
 ## Learnings
 
 - Geduld im Umgang mit Skizzen: Nicht jede Zeichnung passt in das Gesamtkonzept einer Website, auch wenn sie gestalterisch überzeugt.  
-- Reduktion als gestalterisches Mittel: Weniger Elemente führen zu einer klareren Erzählung.  
+- Reduktion als gestalterisches Mittel: Weniger Text vereinfacht die Erzählung.  
 - Es existiert eine sehr grosse und hilfsbereite Online-Community im Bereich Webdesign und Creative Coding.
 
-*Hier ergänzt der Teamkollege seine Learnings.*
-
+*Kommentar Cédi.*
 ---
 
 ## Reflexion
 
 Scrollytelling eröffnet neue Möglichkeiten, Websites nicht nur als Informationsflächen, sondern als erzählerische Räume zu denken. Die Arbeit am Projekt hat gezeigt, dass neue und sinnvolle digitale Formate entstehen können, wenn Gestaltung, Inhalt und Technik gemeinsam entwickelt werden.
 
-*Hier ergänzt der Teamkollege seine Reflexion.*
-
+*Kommentar Cédi.*
 ---
 
 ## Ressourcen
@@ -67,5 +64,4 @@ Scrollytelling eröffnet neue Möglichkeiten, Websites nicht nur als Information
 - Inspiration: Pinterest  
 - Tutorials & Inspiration: Smashing Magazine, CodePen, weitere Online-Ressourcen  
 - Unterstützung: ChatGPT (Übersetzungen, Hilfe beim Coden sowie Formulierung und Überarbeitung dieser README)
-
-
+*Kommentar Cédi.*
