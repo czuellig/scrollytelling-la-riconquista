@@ -460,8 +460,24 @@ backToTopButton.addEventListener("click", () => {
   });
 });
 
+// --- Kapitel 7: UI-Layer einblenden ---
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#chapter-7-end",
+    start: "top center",
+    end: "bottom center",
+    toggleActions: "play reverse play reverse"
+  }
+})
+.fromTo("#ui-layer", 
+  { autoAlpha: 0 }, 
+  { autoAlpha: 1, duration: 0.6, ease: "power2.out" }
+);
 
 
 animateChapter(4);
 animateChapter(6);
+
+
+
 

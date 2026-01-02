@@ -17,7 +17,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 500;
+  z-index: 400;
   overflow: visible;
 }
 
@@ -132,32 +132,32 @@ body {
 
 /* Schriftgrösse und Stil */
 .title-text {
-  font-size: 4rem;
+  font-size: 6rem;
   margin-bottom: 1rem;
   color: var(--text);
   color: #e7e1c1;
 } 
 
 .title-description {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.4;
   color: #e7e1c1;
 }
 
 #opener-quote {
   font-size: 2rem;
-  text-align: center;
   max-width: 800px;
   padding: 2rem 2rem;
   color: var(--text);
-  margin: 0 auto;
+  padding-left: 10rem;
 }
 
 #quote-text, #quote-source {
    flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
-  color: var(--text)
+  color: var(--text);
+  text-align: left;
 }
 
 /* --- OPENER SECTION --- */
@@ -225,7 +225,7 @@ body {
 /* Linke Spalte (Text Human) */
 .text-human {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text)
 }
@@ -233,7 +233,7 @@ body {
 /* Rechte Spalte (Bild + Text Plants) */
 .text-plants {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text);
   position: relative;
@@ -305,7 +305,7 @@ body {
   padding-right: 10vw;
   padding-left: 2vw;
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -613,7 +613,7 @@ body {
   padding-right: 10vw;  
   padding-left: 2vw;
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -684,15 +684,24 @@ body {
   object-fit: cover;
 }
 
-#chapter-7-end {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--bg);
-  z-index: 999;
+/* --- Globaler UI-Layer über ScrollSmoother & Pflanzen --- */
+#ui-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000; /* höher als plant-layer */
 }
 
-/* Titel mittig */
+#chapter-7-end {
+  position: relative;
+  height: 100vh;
+}
+
+.chapter-7-spacer {
+  height: 100vh;
+}
+
+/* Titel */
 #chapter-7-end-title {
   position: absolute;
   top: 50%;
@@ -700,16 +709,16 @@ body {
   transform: translate(-50%, -50%);
   font-size: clamp(3rem, 8vw, 8rem);
   color: var(--text);
-   z-index: 999;
+  pointer-events: auto;
 }
 
-/* Button unten mittig */
+/* Button */
 #chapter-7-end-button {
   position: absolute;
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 1;
+  pointer-events: auto;
 
   background: transparent;
   color: var(--text);
@@ -720,11 +729,9 @@ body {
   font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   cursor: pointer;
-   z-index: 999;
-
 }
+
 
 #chapter-7-end-button:hover {
   opacity: 1;
