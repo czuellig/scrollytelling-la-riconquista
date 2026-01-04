@@ -64,10 +64,9 @@ Ein zweites Problem, das viel Zeit in Anspruch nahm, war ein klassischer Anfäng
 
 Scrollytelling eröffnet neue Möglichkeiten, Websites nicht nur als Informationsflächen, sondern als erzählerische Räume zu denken. Die Arbeit am Projekt hat gezeigt, dass neue und sinnvolle digitale Formate entstehen können, wenn Gestaltung, Inhalt und Technik gemeinsam entwickelt werden.
 
-Gerade bei grösseren Programmierprojekten wurde mir bewusst, wie essenziell eine sorgfältige Planung sowie eine klare Code-Struktur sind – insbesondere dann, wenn mehrere Personen am selben Projekt arbeiten. Rückblickend denke ich, dass vor allem unser CSS-Code deutlich sauberer hätte aufgebaut werden können. Eine klarere Struktur und ein konsistentes Klassensystem hätten vermutlich viele Dopplungen verhindert. Dafür wäre es jedoch notwendig gewesen, bereits zu Beginn ein durchdachtes Konzept für Klassen, Benennungen und Zuständigkeiten zu definieren – etwas, das in unserem Projekt leider nicht ausreichend vorhanden war.
+Gerade bei grösseren Programmierprojekten wurde mir bewusst, wie essenziell eine sorgfältige Planung sowie eine klare Code-Struktur sind – insbesondere dann, wenn mehrere Personen am selben Projekt arbeiten. Rückblickend denke ich, dass vor allem unser CSS-Code deutlich sauberer hätte aufgebaut werden können. Eine klarere Struktur und ein konsistentes Klassensystem hätten vermutlich viele Dopplungen verhindert. Dafür wäre es jedoch notwendig gewesen, bereits zu Beginn ein durchdachtes Konzept für Klassen, Benennungen und Zuständigkeiten zu definieren – etwas, das in unserem Projekt leider nicht ausreichend vorhanden war. 
 
 Abschliessend sind wir jedoch sehr zufrieden und auch begeistert darüber, wie viel sich selbst mit vergleichsweise geringen Programmierkenntnissen mithilfe von Bibliotheken wie GSAP und Tools wie ChatGPT für ein Projekt umsetzen lässt.
----
 
 ## Ressourcen
 
