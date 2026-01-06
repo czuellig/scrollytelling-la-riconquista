@@ -19,6 +19,7 @@ body {
   pointer-events: none;
   z-index: 400;
   overflow: visible;
+  opacity: 0.5;
 }
 
 /* Grundstil */
@@ -388,23 +389,23 @@ body {
 }
 
 .img-group div:nth-child(1) { 
-  background-image: url("/content/media/04/IMG_0301.PNG"); 
+  background-image: url("/content/media/04/IMG_0303.png"); 
 } 
 
 .img-group div:nth-child(2) { 
-  background-image: url("/content/media/04/IMG_0304.PNG"); 
+  background-image: url("/content/media/04/IMG_0305.png"); 
 } 
 
 .img-group div:nth-child(3) { 
-  background-image: url("/content/media/04/IMG_0308.PNG"); 
+  background-image: url("/content/media/04/IMG_0307.png"); 
 } 
 
 .img-group div:nth-child(4) { 
-  background-image: url("/content/media/04/IMG_0309.PNG"); 
+  background-image: url("/content/media/04/IMG_0306.png"); 
 } 
 
 .img-group div:nth-child(5) { 
-  background-image: url("/content/media/04/IMG_0310.PNG"); 
+  background-image: url("/content/media/04/IMG_0302.png"); 
 }
 
 .img-group div::before {
