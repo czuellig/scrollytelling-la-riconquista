@@ -52,11 +52,15 @@ Ein zweites Problem, das viel Zeit in Anspruch nahm, war ein klassischer Anfäng
 ## Learnings
 
 - Geduld im Umgang mit Skizzen: Nicht jede Zeichnung passt in das Gesamtkonzept einer Website, auch wenn sie gestalterisch überzeugt.  
+- Machtvolles Verhältnis: Uns wurde bewusst, wie stark das Verhältnis von Sprache, Typografie und Layout die inhaltliche Wirkung beeinflusst.
+- Arbeiten mit Fremdsprache: Italienisch ist uns zwar bekannt, jedoch sind wir inhaltlich schnell an unsere Grenze gekommen.
+- Arbeiten im shared File via Adobe Photoshop: Wir haben uns bewusst gegen Figma entschieden. Wie sich schnell gezeigt hat, liefert Photoshop im Umgang mit Zeichnungen einen logischeren Workflow.
 - Reduktion als gestalterisches Mittel (weniger Text vereinfacht die Erzählung).
 - Es existiert eine sehr grosse und hilfsbereite Online-Community im Bereich Webdesign und Creative Coding.
 - GSAP 
 - Coding mit Unterstützung von KI
 - Umgang mit vielen (grossen) Bilder auf Websiten 
+- Geduld im Umgang mit Animationen und Offenheit zu Änderungen.
 
 ---
 
@@ -70,7 +74,7 @@ Abschliessend sind wir jedoch sehr zufrieden und auch begeistert darüber, wie v
 
 ## Ressourcen
 
-- Inspiration: Pinterest  
+- Inspiration: Natur/Umgebung (Stadt Zürich und Luzern), Pinterest, diverse Scrollytelling-Websites (aus dem VIS Unterricht)
 - Tutorials & Inspiration: Smashing Magazine, CodePen, weitere Online-Ressourcen
 - GSAP
 - Unterstützung: ChatGPT (Übersetzungen, Hilfe beim Coden sowie Formulierung und Überarbeitung dieser README)
