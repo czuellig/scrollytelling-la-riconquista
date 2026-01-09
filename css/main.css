@@ -99,13 +99,13 @@ body {
   width: 100%;
   height: 107%;
   z-index: 2;
+}
 
-  img {
+#title-pic-top-container img {
     width: 100%;
     height: 107%;
     object-fit: cover;
   }
-}
 
 #title-pic-bottom-container {
   position: absolute;
@@ -114,13 +114,13 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
 
-  img {
+#title-pic-bottom-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-}
 
 #title-text-container {
   position: absolute;
@@ -239,14 +239,15 @@ body {
   color: var(--text);
   position: relative;
   top: 20vh;
-    img {
+}
+
+.text-plants img {
     width: 100%;
     height: auto;
     margin-bottom: 2rem;
     display: block;
     object-fit: cover;
-    }
-}
+  }
 
 /* --- PARALLAX CHAPTER 1 --- */
 #parallax-chapter-1-container {
@@ -434,13 +435,14 @@ body {
 
 #chapter-3-pic {    
   justify-content: flex-end;
-  img {
+}
+
+#chapter-3-pic img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
   }
-}
 
 #chapter-3-title {
   display: flex;
@@ -711,7 +713,6 @@ body {
   font-size: 6rem;
   font-weight: 500;
   color: var(--text);
-  pointer-events: auto; 
 }
 
 /* Button */
@@ -720,10 +721,10 @@ body {
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: auto;
 
   background: transparent;
   color: var(--text);
+  pointer-events: all;
   border: 1px solid var(--text);
   padding: 0.8rem 2.2rem;
 
