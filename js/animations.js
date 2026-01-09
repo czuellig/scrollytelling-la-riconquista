@@ -26,7 +26,6 @@ plants.forEach((plant) => {
       start: "top center",
       end: "bottom center",
       scrub: true,
-      // markers: true
     }
   };
 
@@ -98,7 +97,7 @@ gsap.from(splitQuoteText.lines, {
   scrollTrigger: { 
     trigger: "#opener-quote", 
     start: "bottom 80%", 
-    markers: true, }, 
+    }, 
     y: 50, opacity: 0, 
     ease: "power2.out", 
     duration: 1, 
@@ -390,7 +389,6 @@ const tlRodolex = gsap.timeline({
     start: "top top",
     end: `+=${(slidesCount - 1) * 200}%`,
     anticipatePin: 0.5,
-    markers: false
   }
 });
 
@@ -434,7 +432,6 @@ gsap.timeline({
     trigger: "#chapter-7-end",
     start: "90% bottom",
     once: true,
-    markers: true
   },
   delay: 3
 })
@@ -444,7 +441,7 @@ gsap.timeline({
   duration: 1.2,
   ease: "power3.out"
 })
-.from("#chapter-7-end button", {
+.from("#chapter-7-end-button", {
   opacity: 0,
   y: 30,
   duration: 1,

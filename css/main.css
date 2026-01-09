@@ -19,7 +19,7 @@ body {
   pointer-events: none;
   z-index: 400;
   overflow: visible;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 /* Grundstil */
@@ -708,9 +708,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: 6rem;
+  font-weight: 500;
   color: var(--text);
-  pointer-events: auto;
+  pointer-events: auto; 
 }
 
 /* Button */
